@@ -1,4 +1,4 @@
-<title>Floodead · 复刻 Review</title>
+<title>Floodead · Replica Review</title>
 <style>
   :root{
     --bg:#0a0f0e; --surface:#111817; --surface2:#0d1413; --text:#d9e2de; --muted:#8a9a95;
@@ -16,7 +16,7 @@
     --accent:#128a5b; --accent-dim:#6fbf9c; --amber:#a06a15; --blood:#b23b36; --border:#dde5e0;}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--text);
-    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
     line-height:1.7;-webkit-font-smoothing:antialiased;}
   .wrap{max-width:780px;margin:0 auto;padding:clamp(28px,5vw,64px) clamp(18px,4vw,32px) 80px;}
   .eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent-dim);font-weight:600;}
@@ -52,75 +52,77 @@
   footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--border);font-size:12.5px;color:var(--muted);}
   strong{color:var(--text);font-weight:650;}
   .lede{font-size:17px;color:var(--text);}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;
+    background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:0 5px;}
 </style>
 
 <div class="wrap">
   <header class="hero">
-    <div class="eyebrow">Wanaka dev · 复刻 Review</div>
-    <h1>Floodead — 半淹办公楼生存恐怖</h1>
-    <p class="sub">把 FlooDead 换皮成「Wanaka 办公楼被暴雨半淹、同事被污染」的三章式第一人称恐怖。</p>
+    <div class="eyebrow">Wanaka dev · Replica Review</div>
+    <h1>Floodead — Half-Flooded Office Survival Horror</h1>
+    <p class="sub">A reskin of FlooDead into "Wanaka's own office building, flooded by a rainstorm, colleagues turned infected" — a three-chapter first-person horror.</p>
     <div class="meta">
       <span>checkpoint <b>chk_0Mm2ESM6aNXVR0m</b></span>
-      <span><a href="https://studio.dev.wanaka.app/editor?projectId=prj_0M350KmUdcJPkqO">编辑器 / 可玩 →</a></span>
+      <span><a href="https://studio.dev.wanaka.app/editor?projectId=prj_0M350KmUdcJPkqO">Editor / Playable →</a></span>
     </div>
   </header>
 
-  <h2>做了什么</h2>
-  <p class="lede">全功能实现。玩家是无名员工，探索半淹大楼、面对变成感染体的<strong>真实同事</strong>——可以<strong>打倒</strong>他们，也可以用<strong>血清救回</strong>；救的人越多结局越好。第三章 Boss 是柴峻洋本人，全员用真实 wall 成员名。</p>
+  <h2>What was built</h2>
+  <p class="lede">A full-featured build. You play a nameless employee exploring the half-flooded building and facing colleagues turned into infected — <strong>real teammates</strong> from the wall roster. You can <strong>put them down</strong>, or <strong>save them with serum</strong>; the more you save, the better the ending. The Chapter 3 boss is Chai Junyang (the director) himself.</p>
 
-  <h2>核心循环还原度</h2>
+  <h2>Core Loop Fidelity</h2>
   <div class="card">
     <ul class="checklist">
-      <li><span class="mark ok">✅</span><span>三章第一人称探索半淹办公楼（办公层 4800² → 地下机房 → 研究层污染源）</span></li>
-      <li><span class="mark ok">✅</span><span>手持武器反击：<b class="kbd">F</b> 攻击掉血击杀，掉工牌揭示真实队友身份</span></li>
-      <li><span class="mark ok">✅</span><span>多怪群同时 AI（findAll + WeakMap per-enemy 状态）</span></li>
-      <li><span class="mark ok">✅</span><span>道德抉择：击杀 vs 血清救助，救助数驱动 <strong>4 档结局</strong>（归途≥5 / 救赎≥3 / 微光≥1 / 幸存 0）</span></li>
-      <li><span class="mark ok">✅</span><span>蜿蜒地图：二三章交错隔断墙逼出 S 形，怪一段一个逐个遭遇</span></li>
-      <li><span class="mark ok">✅</span><span>恐怖节奏：突然逼近 jump scare + 近距离心跳越近越急 + 偶发跳电</span></li>
-      <li><span class="mark ok">✅</span><span>音效：击打 / 对话 / 恐怖追逐 drone / 心跳 / 稀疏滴水（numpy 自制 + S3 上传）</span></li>
-      <li><span class="mark ok">✅</span><span>离职同事救场彩蛋（跨三章）：濒危时戴炜恒 / 赵美晨瞬移登场压制怪 + 回血</span></li>
-      <li><span class="mark part">◐</span><span>美术：已换 CC-BY server rack + 自制音频；其余多为 catalog 占位（动画角色不换以保 clip）</span></li>
-      <li><span class="mark no">✗</span><span>真窗口平衡验证：难度 / 手感 / 像不像原作需导演真人试玩定夺</span></li>
+      <li><span class="mark ok">✅</span><span>First-person exploration of the flooded building across three chapters (office floor 4800² → underground server room → research level / contamination source)</span></li>
+      <li><span class="mark ok">✅</span><span>Melee combat: <b class="kbd">F</b> attacks the infected; killing drops a badge revealing the real teammate's identity</span></li>
+      <li><span class="mark ok">✅</span><span>Multi-enemy AI (findAll + per-enemy state via WeakMap)</span></li>
+      <li><span class="mark ok">✅</span><span>Moral choice: kill (F) vs. rescue with serum (G); rescue count drives <strong>4 endings</strong> (Homeward ≥5 / Redemption ≥3 / Glimmer ≥1 / Survivor 0)</span></li>
+      <li><span class="mark ok">✅</span><span>Winding maps: chapters 2–3 rebuilt from straight corridors into S-curve zigzags via staggered partition walls; enemies met one per leg (no entrance swarm)</span></li>
+      <li><span class="mark ok">✅</span><span>Horror pacing: sudden-approach jump scare + proximity heartbeat that quickens as enemies close in + occasional power flickers</span></li>
+      <li><span class="mark ok">✅</span><span>Sound: hit thud, dialogue blip, horror chase drone, heartbeat, sparse dripping (numpy-synthesized + S3-uploaded)</span></li>
+      <li><span class="mark ok">✅</span><span>Departed-colleague rescue cavalry (all three chapters): when near death, Dai Weiheng / Zhao Meichen teleport in, suppress an enemy and heal you</span></li>
+      <li><span class="mark part">◐</span><span>Art: swapped in a CC-BY server rack + custom audio; the rest is mostly catalog placeholders (animated characters kept to preserve their animation clips)</span></li>
+      <li><span class="mark no">✗</span><span>Real-window balance validation: difficulty / feel / fidelity to the original need a director playthrough to judge</span></li>
     </ul>
   </div>
 
-  <h2>踩的坑</h2>
+  <h2>Pitfalls Hit</h2>
   <div class="tbl">
     <table>
-      <thead><tr><th>坑</th><th>现象 + 根因 + 修复</th><th>发现</th></tr></thead>
+      <thead><tr><th>Pitfall</th><th>Symptom + root cause + fix</th><th>Found via</th></tr></thead>
       <tbody>
-        <tr><td>assetStoreId 音频不播</td><td>assetStoreId 绑的 obj.Audio 无声 → 全改 bundled <code>asset:</code> 资源</td><td>真窗口</td></tr>
-        <tr><td>碰撞顶穿地</td><td>动态玩家胶囊把 kinematic 怪 y 顶穿地 → 每帧 <code>m.y=90</code> 锁定</td><td>真窗口</td></tr>
-        <tr><td>上半屏黑</td><td>开顶房间露暗背景 + far plane → 加天花板 + far=10000</td><td>真窗口</td></tr>
-        <tr><td>自定义资产 deploy 不传</td><td>内容寻址，本地 assets/ 不随 deploy 传 → <code>aws s3api put-object</code></td><td>紫块</td></tr>
-        <tr><td>短 mp3 循环变很快</td><td>心跳短音循环 = 频率过高 → 改定时单声、按距离拉间隔</td><td>真窗口</td></tr>
-        <tr><td>手动刷 CLI token 断续期</td><td>refresh 接口会轮换 token；没存回就断链 → 只跑 <code>wanaka login</code>、别碰 credentials（30 天自动续期）</td><td>每小时掉登录</td></tr>
+        <tr><td>assetStoreId audio won't play</td><td>obj.Audio bound to an assetStoreId is silent → switched all audio to bundled <code>asset:</code> resources</td><td>real window</td></tr>
+        <tr><td>Sinking into the floor</td><td>the dynamic player capsule pushed a kinematic enemy's y through the floor → lock <code>m.y=90</code> every frame</td><td>real window</td></tr>
+        <tr><td>Top half of screen black</td><td>open-top rooms showed the dark backdrop + far plane → added ceilings + far=10000</td><td>real window</td></tr>
+        <tr><td>Custom assets not uploaded by deploy</td><td>content-addressed; local assets/ don't ship with deploy → <code>aws s3api put-object</code></td><td>purple block</td></tr>
+        <tr><td>Short mp3 loop plays too fast</td><td>looping a short heartbeat clip = too-high frequency → switched to a timed single beat, interval scaled by distance</td><td>real window</td></tr>
+        <tr><td>Manual CLI-token refresh broke auto-refresh</td><td>the refresh endpoint rotates the refresh token; not saving the new one breaks the chain → only run <code>wanaka login</code>, never touch credentials (30-day auto-refresh)</td><td>hourly logout</td></tr>
       </tbody>
     </table>
   </div>
 
-  <h2>与原作差距</h2>
+  <h2>Gaps vs the Original</h2>
   <div class="card">
     <ul class="checklist">
-      <li><span class="mark part">◐</span><span><strong>美术保真度</strong>：仍以 catalog 模型为主；水面 / 灯光 / 家具 / 尸体道具可再提升（Sketchfab→S3 管线已通、就差批量做）</span></li>
-      <li><span class="mark part">◐</span><span><strong>动画角色不换模型</strong>：换了会丢 Zombie_* 动画 clip、破坏框架，故保留 catalog 僵尸</span></li>
-      <li><span class="mark no">✗</span><span><strong>平衡 / 像不像原作</strong>：导演真人判断，需完整试玩定夺</span></li>
-      <li><span class="mark no">✗</span><span>Ch1 未做蜿蜒；Boss 战为掉血近战；敌人单一种类；无章节间存档</span></li>
+      <li><span class="mark part">◐</span><span><strong>Art fidelity</strong>: still mostly catalog models; water surface / lighting / furniture / corpse props could be pushed further (the Sketchfab→S3 pipeline is proven, it just wasn't done at scale)</span></li>
+      <li><span class="mark part">◐</span><span><strong>Animated characters not re-modeled</strong>: swapping would lose the Zombie_* animation clips and break the framework, so catalog zombies were kept</span></li>
+      <li><span class="mark no">✗</span><span><strong>Balance / fidelity to the original</strong>: a director's live judgment; needs a full playthrough to settle</span></li>
+      <li><span class="mark no">✗</span><span>Chapter 1 not made winding; boss fight is HP-bar melee; single enemy type; no between-chapter checkpoints</span></li>
     </ul>
   </div>
 
-  <h2>Demo 怎么玩</h2>
-  <p>编辑器 → Preview mode。目标：三章逐层深入 → 打倒或<strong>救回</strong>感染的同事（工牌揭示真名）→ 到蓝光出口。<strong>救的人越多结局越好</strong>（救满 5 人 = 全员生还「归途」）。濒危时会有离职同事冲出来救你。第三章 Boss = 柴峻洋，可打倒也可血清救回。</p>
+  <h2>How to Play the Demo</h2>
+  <p>Editor → Preview mode. Goal: descend through three chapters → put down or <strong>rescue</strong> the infected colleagues (badges reveal real names) → reach the blue exit. <strong>The more you save, the better the ending</strong> (save 5 = the everyone-survives "Homeward" ending). When you're near death, a departed colleague rushes in to save you. The Chapter 3 boss is Chai Junyang — you can defeat him or cure him with serum.</p>
   <div class="controls">
-    <span class="key"><span class="kbd">WASD</span> 移动</span>
-    <span class="key"><span class="kbd">鼠标</span> 看</span>
-    <span class="key"><span class="kbd">C</span> 拾取</span>
-    <span class="key"><span class="kbd">E</span> 交互 / 读便签</span>
-    <span class="key"><span class="kbd">F</span> 攻击</span>
-    <span class="key"><span class="kbd">G</span> 注射血清救人</span>
+    <span class="key"><span class="kbd">WASD</span> Move</span>
+    <span class="key"><span class="kbd">Mouse</span> Look</span>
+    <span class="key"><span class="kbd">C</span> Pick up</span>
+    <span class="key"><span class="kbd">E</span> Interact / read notes</span>
+    <span class="key"><span class="kbd">F</span> Attack</span>
+    <span class="key"><span class="kbd">G</span> Inject serum to rescue</span>
   </div>
 
   <footer>
-    prj_0M350KmUdcJPkqO · 资产署名：server rack 模型 CC-BY，Sketchfab 作者 Spellkaze。全员 NPC 采用真实 wall 成员名。
+    prj_0M350KmUdcJPkqO · Asset credit: server rack model CC-BY, Sketchfab author Spellkaze. All NPCs use real wall-roster names.
   </footer>
 </div>
